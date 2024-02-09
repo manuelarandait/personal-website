@@ -8,13 +8,14 @@
           alt=""
         >
       </div>
+
       <div class="md:w-2/3 px-4 flex flex-wrap">
         <div class="font-medium items-center">
           <div class="text-secondary-dark dark:text-slate-500 mt-6">
             Web Developer
           </div>
           <Typed :options="options">
-            <div class="text-5xl text-sky-950 dark:text-sky-400 mt-3 inline-block">
+            <div class="text-xl lg:text-5xl text-sky-950 dark:text-sky-400 mt-3 inline-block">
               I'm a <span class="typing font-weight-bold" />
             </div>
           </Typed>
@@ -45,6 +46,7 @@ const options: TypedOptions = {
   strings: ["Manuel Aranda", "Symfony enthusiastic", "Full stack developer"],
   loop: true,
   typeSpeed: 80,
+  backSpeed: 60,
 };
 
 </script>

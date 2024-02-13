@@ -8,12 +8,12 @@
   <div class="max-w-3xl px-6 mx-auto sm:px-6 xl:max-w-5xl xl:px-0 overflow-y-hidden">
     <div class="pt-10 pb-8 space-y-2 md:space-y-5">
       <h1
-        class="text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
+        class="text-2xl font-bold leading-9 tracking-tight text-gray-300 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
       >
         Proyectos
       </h1>
       <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
-        Some of the projects I've build or been a part of.
+        Algunos de los proyectos en los que he participado.
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -25,32 +25,10 @@
         <div class="p-6">
           <div class="flex flex-row justify-between items-center">
             <div class="my-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="text-primary-color dark:text-primary-color-dark h-10 w-10"
+              <Icon
+                name="material-symbols:folder-outline"
+                size="30px"
               />
-            </div>
-            <div class="flex flex-row justify-between">
-              <div class="mx-1">
-                <a
-                  class="text-sm text-gray-500 transition hover:text-gray-600"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                ><span class="sr-only" /><img
-                  class="w-6 h-6"
-                ></a>
-              </div>
-              <div class="mx-1">
-                <a
-                  class="text-sm text-gray-500 transition hover:text-gray-600"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                ><span class="sr-only">github</span><img
-                  class="w-6 h-6"
-                ></a>
-              </div>
             </div>
           </div>
           <h2 class="text-2xl font-bold leading-8 tracking-tight mb-3">
@@ -61,7 +39,7 @@
           </p>
           <div class="flex flex-row justify-between">
             <div class="text-gray-400 text-sm font-extralight">
-              {{ project.tech1 }} • {{ project.tech2 }} • {{ project.tech3 }}
+              {{ project.tech1 }} • {{ project.tech2 }} • {{ project.tech3 }} • {{ project.tech4 }} • {{ project.tech5 }}
             </div>
           </div>
         </div>

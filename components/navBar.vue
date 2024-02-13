@@ -14,35 +14,35 @@ const mobileMenuOpen = ref(false)
 
 
 <template>
-  <nav class="mx-auto md:container sticky top-0 backdrop-blur flex-none transition-colors z-50]">
+  <nav class="mx-auto md:container sticky top-0 backdrop-blur flex-none transition-colors z-50 text-gray-200">
     <div class="flex flex-wrap items-center justify-end md:justify-center px-4 py-4 border-b border-gray-200 font-2xl">
       <div class="hidden lg:flex lg:flex-1 lg:justify-start">
         <a
-          href="#"
-          class="text-sm font-semibold leading-6 text-gray-900"
+          href="/"
+          class="text-sm font-semibold leading-6"
         >MA</a>
       </div>
 
       <div class="lg:hidden">
         <button
           type="button"
-          class="-m-2.5 rounded-md p-2.5 text-gray-700"
+          class="-m-2.5 rounded-md p-2.5 "
           @click="mobileMenuOpen = true"
         >
           <span class="sr-only">Open main menu</span>
           <Icon
             name="quill:hamburger"
-            color="black"
+            color="white"
             size="20px"
           />
         </button>
       </div>
-      <div class="hidden lg:flex lg:gap-x-12 px-4 py-3 font-semibold leading-6 text-gray-900 hover:text-grey-darker">
+      <div class="hidden lg:flex lg:gap-x-12 px-4 py-3 font-semibold leading-6 hover:text-grey-darker">
         <nuxt-link
           v-for="item in navigation"
           :key="item.name"
           :to="item.to"
-          class="text-md font-semibold leading-6 text-gray-900"
+          class="text-md font-semibold leading-6"
         >
           {{ item.name }}
         </nuxt-link>
@@ -58,13 +58,13 @@ const mobileMenuOpen = ref(false)
           <div class="flex justify-end">
             <button
               type="button"
-              class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              class="-m-2.5 rounded-md p-2.5 "
               @click="mobileMenuOpen = false"
             >
               <span class="sr-only">Close menu</span>
               <Icon
                 name="material-symbols:close"
-                color="black"
+                color="white"
                 size="30px"
               />
             </button>
@@ -76,7 +76,7 @@ const mobileMenuOpen = ref(false)
                   v-for="item in navigation"
                   :key="item.name"
                   :href="item.to"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  class="-mx-3 block rounded-lg px-3 py-2 font-semibold leading-7 hover:bg-gray-50"
                 >
                   {{ item.name }}
                 </a>
@@ -88,18 +88,19 @@ const mobileMenuOpen = ref(false)
 
       <div class="hidden lg:flex lg:flex-1 lg:justify-end w-auto">
         <a
-          href="#"
-          class="text-sm font-semibold leading-6 text-gray-900"
+          href="https://github.com/manuelarandait?tab=repositories"
+          class="text-sm font-semibold leading-6"
+          target="_blank"
         >
           <Icon
             name="uil:github"
-            color="black"
+            color="white"
             size="30px"
           />
         </a>
         <a
           href="#"
-          class="rounded-full text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 text-sm px-4 flex flex-wrap items-center justify-center mx-2"
+          class="rounded-full ring-1 ring-gray-900/10 hover:ring-gray-900/20 text-sm px-4 flex flex-wrap items-center justify-center mx-2"
         >Carrera</a>
       </div>
     </div>

@@ -29,7 +29,7 @@ export default {
           xl: "6rem",
           "2xl": "8rem",
         },
-      },
+      }
     },
   },
   plugins: [],

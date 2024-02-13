@@ -20,17 +20,17 @@
         >
       </div>
       <div class="md:w-2/3 flex flex-wrap items-center">
-        <div class="justify-center px-2">
-          <p class="text-sm font-medium mt-6 md:mt-4 text-gray-200">
+        <div class="justify-center px-2 ">
+          <p class="text-sm font-medium mt-6 md:mt-4 text-gray-200 leading-6">
             Mi nombre es Manuel Aranda, estudié Ingeniería Informática en Móstoles, Madrid, y actualmente trabajo como full Stack aunque mi especialidad es desarrollo Backend. En 2024 tomé la decision de hacerme desarrollador freelance.
           </p>
-          <p class="text-sm font-medium mt-6 md:mt-4 text-gray-200">
+          <p class="text-sm font-medium mt-6 md:mt-4 text-gray-200 leading-6">
             He trabajado tanto en empresas multinacionales, como startups donde. Y he conocido a grandisimos compañeros. De hecho todavia mantengo contacto con la gran mayoria de ellos.
           </p>
-          <p class="text-sm font-medium mt-6 md:mt-4 text-gray-200">
+          <p class="text-sm font-medium mt-6 md:mt-4 text-gray-200 leading-6">
             Empecé con PHP, y me fui especializando en desarrollo backend. Conocí el framework Symfony y me enamoró tanto que todavia sigo trabajando con el. Me parece una de las mejores opciones para construir un back robusto, rapido y seguro.
           </p>
-          <p class="text-sm font-medium mt-6 md:mt-4 text-gray-200">
+          <p class="text-sm font-medium mt-6 md:mt-4 text-gray-200 leading-6">
             Debido a la rápida evolucion de las tecnologias, me decidí a aprender Vue, por su corta curva de aprendizaje. Unido a Api Platform, y Symfony, ahora manejo de forma independiente el back, y front.
           </p>
         </div>

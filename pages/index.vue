@@ -2,8 +2,10 @@
 </script>
 
 <template>
-  <modules-hero-banner />
-  <span class="gradient" />
+  <div>
+    <modules-hero-banner />
+    <span class="gradient" />
+  </div>
 </template>
 <style scoped>
 .gradient {

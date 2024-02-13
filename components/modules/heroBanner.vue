@@ -1,5 +1,5 @@
 <template>
-  <section class="md:h-[86vh] flex items-center px-6 md:py-24 py-16 sm:py-32 lg:px-8 mx-6 ">
+  <section class="flex items-center px-6 md:py-24 py-16 sm:py-32 lg:px-8 mx-6 ">
     <div class="max-w-screen-lg md:flex mx-auto dark:bg-gray-900 z-10">
       <div class="md:w-1/3 flex items-center">
         <img

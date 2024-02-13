@@ -1,7 +1,8 @@
 <template>
-  <div class="bg-gradient-to-t from-slate-950 to-slate-700 min-h-screen mx-auto max-w-8xl text-white">
+  <div class="bg-gradient-to-t from-slate-950 to-slate-800 min-h-screen mx-auto max-w-8xl text-white">
     <nav-bar />
     <nuxt-page />
+    <the-footer />
   </div>
 </template>
 <script setup>

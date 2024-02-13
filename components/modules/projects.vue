@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="max-w-3xl px-6 mx-auto sm:px-6 xl:max-w-5xl xl:px-0 overflow-y-hidden">
+  <div class="max-w-3xl px-6 mx-auto xl:max-w-5xl xl:px-0 overflow-y-hidden pb-4">
     <div class="pt-10 pb-8 space-y-2 md:space-y-5">
       <h1
         class="text-2xl font-bold leading-9 tracking-tight text-gray-300 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
@@ -31,7 +31,7 @@
               />
             </div>
           </div>
-          <h2 class="text-2xl font-bold leading-8 tracking-tight mb-3">
+          <h2 class="text-2xl font-bold leading-8 tracking-tight mb-3 text-green-400">
             {{ project.title }}
           </h2>
           <p class="prose text-gray-500 max-w-none dark:text-gray-400 mb-3">

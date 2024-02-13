@@ -1,16 +1,16 @@
 <template>
-  <section class="md:h-[90vh] flex items-center px-6 py-24 sm:py-32 lg:px-8 mx-6">
-    <div class="max-w-screen-lg md:flex mx-auto dark:bg-gray-900">
+  <section class="md:h-[86vh] flex items-center px-6 md:py-24 py-16 sm:py-32 lg:px-8 mx-6 ">
+    <div class="max-w-screen-lg md:flex mx-auto dark:bg-gray-900 z-10">
       <div class="md:w-1/3 flex items-center">
         <img
-          class="shadow-xl md:h-60 md:w-60 h-48 w-48 object-cover rounded-full mx-auto"
+          class="shadow-xl md:h-60 md:w-60 h-48 w-48 object-cover rounded-full mx-auto "
           src="../../assets/img/profile.jpg"
           alt="profile"
         >
       </div>
 
       <div class="md:w-2/3 px-2 flex flex-wrap">
-        <div class="font-medium items-center text-gray-500">
+        <div class="font-medium items-center text-gray-400">
           <div class="mt-6">
             Web Developer | Front end | Back end | PHP | Symfony | Vue | Nuxt
           </div>

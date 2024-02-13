@@ -15,7 +15,7 @@
             Web Developer | Front end | Back end | PHP | Symfony | Vue | Nuxt
           </div>
           <Typed :options="options">
-            <div class="text-xl lg:text-4xl mt-3 inline-block text-gray-100">
+            <div class="text-xl lg:text-4xl mt-3 inline-block text-green-400">
               <span class="typing font-weight-bold" />
             </div>
           </Typed>
@@ -31,7 +31,7 @@
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a
             href="#"
-            class="rounded-md bg-sky-900 px-3.5 py-2.5 text-sm font-semibold  ext-gray-200 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            class="rounded-md bg-green-400 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >Proyectos</a>
           <a
             href="#"

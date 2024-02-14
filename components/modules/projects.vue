@@ -8,11 +8,11 @@
   <div class="max-w-3xl px-6 mx-auto xl:max-w-5xl xl:px-0 overflow-y-hidden pb-4">
     <div class="pt-10 pb-8 space-y-2 md:space-y-5">
       <h1
-        class="text-2xl font-bold leading-9 tracking-tight text-gray-300 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
+        class="text-2xl font-bold leading-9 tracking-tight text-sky-950 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
       >
         Proyectos
       </h1>
-      <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
+      <p class="text-lg leading-7 text-gray-500">
         Algunos de los proyectos en los que he participado.
       </p>
     </div>
@@ -20,7 +20,7 @@
       <div
         v-for="(project, idx) in projects"
         :key="idx"
-        class="h-full overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700"
+        class="h-full overflow-hidden border-2 border-gray-300 rounded-md border-opacity-90 shadow-xl"
       >
         <div class="p-6">
           <div class="flex flex-row justify-between items-center">
@@ -28,10 +28,11 @@
               <Icon
                 name="material-symbols:folder-outline"
                 size="30px"
+                color="black"
               />
             </div>
           </div>
-          <h2 class="text-2xl font-bold leading-8 tracking-tight mb-3 text-green-400">
+          <h2 class="text-2xl font-bold leading-8 tracking-tight mb-3 text-sky-950">
             {{ project.title }}
           </h2>
           <p class="prose text-gray-500 max-w-none dark:text-gray-400 mb-3">

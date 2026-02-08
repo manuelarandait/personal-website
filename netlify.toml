@@ -1,6 +1,9 @@
 [build]
   command = "npm run build"
   publish = ".output/public"
-  # Usar npm install (no npm ci) para que las optionalDependencies (oxc-parser
-  # bindings) se instalen para Linux en Netlify. Ver: https://github.com/npm/cli/issues/4828
+  # npm install (no ci) para que optionalDependencies se instalen en Linux
   install_command = "npm install"
+
+[build.environment]
+  # Node 22: recomendado por Netlify; evita aviso y mejora compatibilidad
+  NODE_VERSION = "22"

@@ -1,6 +1,7 @@
 [build]
   command = "npm run build"
-  publish = ".output/public"
+  # Con preset netlify-legacy, Nitro genera la parte estática en dist (no .output/public)
+  publish = "dist"
   # npm install (no ci) para que optionalDependencies se instalen en Linux
   install_command = "npm install"
 

@@ -1,137 +1,244 @@
 <script setup>
-  const icons = ref(['logos:php', 'skill-icons:symfony-light', 'mdi:api', 'logos:vue', 'logos:nuxt', 'logos:docker', 'logos:mysql', 'logos:aws', 'logos:tailwindcss-icon'])
-  const items = [
-    'https://picsum.photos/600/800?random=1',
-    'https://picsum.photos/600/800?random=2',
-    'https://picsum.photos/600/800?random=3',
-    'https://picsum.photos/600/800?random=4',
-    'https://picsum.photos/600/800?random=5',
-    'https://picsum.photos/600/800?random=6'
-  ]
+import profileImg from '~/assets/img/profile.jpg'
+import carouselPaths from '~/data/carousel-images.json'
+
+// Primera foto desde assets; el resto se cargan automáticamente de public/img/carousel/ (solo .jpeg, .jpg, .png). Al añadir una imagen, reinicia dev o vuelve a hacer build.
+const carouselImages = [profileImg, ...carouselPaths]
+
+const currentSlide = ref(0)
+const autoplayInterval = ref(null)
+const AUTOPLAY_MS = 5000
+
+function goTo (index) {
+  currentSlide.value = (index + carouselImages.length) % carouselImages.length
+  resetAutoplay()
+}
+
+function next () {
+  goTo(currentSlide.value + 1)
+}
+
+function prev () {
+  goTo(currentSlide.value - 1)
+}
+
+function startAutoplay () {
+  stopAutoplay()
+  autoplayInterval.value = setInterval(() => {
+    next()
+  }, AUTOPLAY_MS)
+}
+
+function stopAutoplay () {
+  if (autoplayInterval.value) {
+    clearInterval(autoplayInterval.value)
+    autoplayInterval.value = null
+  }
+}
+
+function resetAutoplay () {
+  startAutoplay()
+}
+
+onMounted(() => {
+  if (carouselImages.length > 1) startAutoplay()
+})
+
+onUnmounted(stopAutoplay)
+
+const socialLinks = [
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/manuel-aranda-rosales', icon: 'mdi:linkedin' },
+  { name: 'GitHub', url: 'https://github.com/manuelarandait', icon: 'mdi:github' },
+]
 </script>
 
 <template>
-  <section>
-    <div class="max-w-3xl px-6 mx-auto sm:px-6 xl:max-w-5xl xl:px-0 overflow-y-hidden">
-      <div class="pt-10 pb-8 space-y-2 md:space-y-5">
-        <h1
-          class="text-2xl font-bold leading-9 tracking-tight text-sky-950 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
-        >
-          Conóceme mejor
-        </h1>
-      </div>
-      <div class="md:flex">
-        <div class="md:w-1/3 flex flex-wrap items-center ">
-          <UCarousel
-            v-slot="{ item }"
-            :items="items"
-            :ui="{ item: 'basis-full' }"
-            arrows
-            class="w-64 mx-auto rounded-lg overflow-hidden"
+  <section id="sobre-mi" class="scrollbar-thin px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <div class="container mx-auto max-w-5xl">
+      <FadeInView>
+        <div class="mb-12 sm:mb-16">
+          <h2 class="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl lg:text-5xl">
+            Conóceme mejor
+          </h2>
+          <p class="mt-3 text-slate-400 sm:text-lg">
+            Un poco sobre mí y mi trayectoria.
+          </p>
+        </div>
+      </FadeInView>
+
+      <FadeInView :delay="0.1">
+        <div class="flex justify-center">
+          <!-- Una sola foto: imagen estática. Dos o más: carousel -->
+          <div
+            v-if="carouselImages.length === 1"
+            class="w-full max-w-sm"
           >
             <img
-              class="shadow-xl md:h-60 md:w-60 h-48 w-48 object-cover mx-auto rounded-lg"
-              :src="item"
-              alt="profile"
+              :src="carouselImages[0]"
+              class="rounded-2xl object-cover shadow-xl ring-1 ring-slate-700/50 w-full aspect-[4/5]"
+              alt="Manuel Aranda"
+              width="400"
+              height="500"
             >
-          </UCarousel>
-        </div>
-        <div class="md:w-2/3 flex flex-wrap items-center">
-          <div class="justify-center px-2 ">
-            <p class="text-sm font-medium mt-6 md:mt-4 text-gray-600 leading-6">
-              Mi nombre es Manuel Aranda, estudié Ingeniería Informática en Móstoles, Madrid, y actualmente trabajo como full Stack aunque mi especialidad es desarrollo Backend. En 2024 tomé la decision de hacerme desarrollador freelance.
-            </p>
-            <p class="text-sm font-medium mt-6 md:mt-4 text-gray-600 leading-6">
-              He trabajado tanto en empresas multinacionales, como startups donde. Y he conocido a grandisimos compañeros. De hecho todavia mantengo contacto con la gran mayoria de ellos.
-            </p>
-            <p class="text-sm font-medium mt-6 md:mt-4 text-gray-600 leading-6">
-              Empecé con PHP, y me fui especializando en desarrollo backend. Conocí el framework Symfony y me enamoró tanto que todavia sigo trabajando con el. Me parece una de las mejores opciones para construir un back robusto, rapido y seguro.
-            </p>
-            <p class="text-sm font-medium mt-6 md:mt-4 text-gray-600 leading-6">
-              Debido a la rápida evolucion de las tecnologias, me decidí a aprender Vue, por su corta curva de aprendizaje. Unido a Api Platform, y Symfony, ahora manejo de forma independiente el back, y front.
-            </p>
           </div>
-        </div>
-      </div>
-      <div class="flex justify-center border my-8 border-gray-300" />
-      <h1
-        class="text-xl font-bold leading-6 tracking-tight text-sky-950 sm:text-4xl sm:leading-10 md:text-4xl md:leading-9"
-      >
-        Mis habilidades
-      </h1>
-      <div class="container py-4 md:space-y-5">
-        <div class="grid md:grid-rows-3 md:grid-flow-col md:grid-cols-3 grid-cols-2 gap-4 justify-center py-5">
           <div
-            v-for="(icon,idx) in icons"
-            :key="idx"
-            class="border-lg rounded-md flex justify-center items-center px-4 py-6 shadow-xl bg-gray-300 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+            v-else
+            class="relative w-full max-w-sm"
+            @mouseenter="stopAutoplay"
+            @mouseleave="startAutoplay()"
           >
-            <Icon
-              :name="icon"
-              size="100px"
-            />
+            <div class="overflow-hidden rounded-2xl shadow-xl ring-1 ring-slate-700/50 aspect-[4/5] bg-slate-900/50">
+              <Transition name="slide-fade" mode="out-in">
+                <img
+                  :key="currentSlide"
+                  :src="carouselImages[currentSlide]"
+                  class="h-full w-full object-cover"
+                  alt="Manuel Aranda"
+                  width="400"
+                  height="500"
+                >
+              </Transition>
+            </div>
+            <div class="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
+              <button
+                v-for="(_, i) in carouselImages"
+                :key="i"
+                type="button"
+                class="h-2 w-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-slate-900"
+                :class="i === currentSlide ? 'bg-emerald-400 scale-125' : 'bg-slate-500 hover:bg-slate-400'"
+                :aria-label="`Ir a foto ${i + 1}`"
+                @click="goTo(i)"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="bg-gray-950 px-10 py-10 mx-auto mt-10">
-      <h2 class="flex justify-center text-gray-200 text-2xl text-center">
-        Sígueme!
-      </h2>
-      <div class="flex justify-center px-10 py-10">
-        <a
-          href="www.linkedin.com/in/manuel-aranda-rosales"
-          target="_blank"
-        >
-          <Icon
-            name="mdi:linkedin"
-            size="50px"
-          />
-        </a>
-        <a
-          href="www.linkedin.com/in/manuel-aranda-rosales"
-          target="_blank"
-        >
-          <Icon
-            name="mdi:twitter"
-            size="50px"
-          />
-        </a>
-        <a
-          href="www.linkedin.com/in/manuel-aranda-rosales"
-          target="_blank"
-        >
-          <Icon
-            name="mdi:instagram"
-            size="50px"
-          />
-        </a> <a
-          href="www.linkedin.com/in/manuel-aranda-rosales"
-          target="_blank"
-        >
-          <Icon
-            name="mdi:github"
-            size="50px"
-          />
-        </a>
-      </div>
+      </FadeInView>
+      <FadeInView :delay="0.15">
+        <div class="mt-12 space-y-6">
+          <p class="text-slate-300 leading-relaxed">
+            Trabajo como ingeniero de software con un fuerte enfoque en análisis y diseño de soluciones. Acompaño proyectos desde la definición funcional y técnica hasta el desarrollo, despliegue y evolución del producto. He trabajado principalmente con Symfony y Vue, pero me adapto al stack que mejor encaje en cada contexto (Node.js, Angular, microservicios, integraciones, etc.).
+          </p>
+          <p class="text-slate-300 leading-relaxed">
+            Aunque he trabajado durante años con Symfony y Vue, no concibo la tecnología como un fin, sino como un medio. A lo largo del tiempo he trabajado también con Node.js, Angular y distintos entornos y arquitecturas, adaptándome a las necesidades de cada proyecto.
+          </p>
+          <p class="text-slate-300 leading-relaxed">
+            Me siento cómodo en proyectos donde hay reflexión, comunicación y criterio técnico. Me gusta entender el problema antes de escribir código y participar en decisiones que impactan a medio y largo plazo.
+          </p>
+        </div>
+      </FadeInView>
+
+      <FadeInView :delay="0.06">
+        <div class="mt-12 rounded-xl border border-violet-500/20 bg-violet-500/5 p-6">
+          <p class="text-slate-300 italic leading-relaxed">
+            Me gusta trabajar con calma, entender bien los problemas y cuidar los detalles.
+          </p>
+        </div>
+      </FadeInView>
+
+      <FadeInView :delay="0.08">
+        <div class="mt-12">
+          <p class="text-slate-300 leading-relaxed">
+            Fuera del trabajo disfruto de la lectura, el cine, la montaña y el deporte. Cuando toca desconectar, los videojuegos también tienen su espacio.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
+              📚 Lectura
+            </span>
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
+              🎬 Cine
+            </span>
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
+              🏔️ Montaña
+            </span>
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
+              🏃 Running
+            </span>
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
+              🎮 Videojuegos
+            </span>
+          </div>
+        </div>
+      </FadeInView>
+
+      <FadeInView>
+        <div class="mt-16 border-t border-slate-800 pt-16 sm:mt-20 sm:pt-20">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-100 sm:text-3xl">
+            Áreas de especialización
+          </h2>
+          <div class="mt-10 grid gap-6 sm:grid-cols-3">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-slate-700">
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-emerald-400">
+                Backend
+              </h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Diseño y desarrollo de APIs, lógica de negocio y arquitectura.
+              </p>
+              <p class="mt-4 text-sm text-slate-400">
+                PHP / Symfony · Node.js · APIs REST · Integraciones · Auth
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-slate-700">
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-emerald-400">
+                Frontend
+              </h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Interfaces mantenibles, orientadas a producto y experiencia de usuario.
+              </p>
+              <p class="mt-4 text-sm text-slate-400">
+                Vue · Nuxt · Angular · Componentes · Estado
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-slate-700">
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-emerald-400">
+                Infra / Entorno
+              </h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Entornos de desarrollo, despliegue y mantenimiento.
+              </p>
+              <p class="mt-4 text-sm text-slate-400">
+                Docker · MySQL · CI/CD · AWS
+              </p>
+            </div>
+          </div>
+        </div>
+      </FadeInView>
+
+      <FadeInView :delay="0.1">
+        <div class="mt-16 rounded-2xl border border-slate-800 bg-slate-900/50 px-6 py-10 sm:px-10 sm:py-12">
+        <h2 class="text-center text-xl font-semibold text-slate-100">
+          Sígueme
+        </h2>
+        <div class="mt-6 flex flex-wrap justify-center gap-6">
+          <a
+            v-for="link in socialLinks"
+            :key="link.name"
+            :href="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 rounded-lg p-3 text-slate-400 transition hover:bg-slate-800 hover:text-emerald-400"
+            :aria-label="link.name"
+          >
+            <Icon :name="link.icon" size="28" />
+            <span class="text-sm font-medium">{{ link.name }}</span>
+          </a>
+        </div>
+        </div>
+      </FadeInView>
     </div>
   </section>
 </template>
-<style>
-body::-webkit-scrollbar {
-  width: 8px !important;
-  height: 6px;               /* width of the entire scrollbar */
-}
 
-body::-webkit-scrollbar-track {
-  background: white;        /* color of the tracking area */
+<style scoped>
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
-
-body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  border-radius: 10px;       /* roundness of the scroll thumb */
-  border: 1px solid darkgrey;  /* creates padding around scroll thumb */
+.slide-fade-enter-from {
+  opacity: 0;
+  transform: translateX(12px);
 }
-
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-12px);
+}
 </style>

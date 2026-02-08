@@ -1,3 +1,102 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fade-in-on-view {
+    transition: none;
+    transform: none;
+  }
+  .fade-in-on-view.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Efectos de fondo: grid + un haz de luz que recorre la pantalla */
+.bg-effects__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent 70%);
+}
+
+/* Gradiente fijo en el centro: transición muy suave para monitores grandes */
+.bg-effects__glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 160vw;
+  height: 160vh;
+  background: radial-gradient(
+    ellipse 60% 60% at 50% 50%,
+    rgba(16, 185, 129, 0.06) 0%,
+    rgba(16, 185, 129, 0.04) 15%,
+    rgba(16, 185, 129, 0.025) 30%,
+    rgba(16, 185, 129, 0.012) 50%,
+    rgba(16, 185, 129, 0.004) 70%,
+    transparent 100%
+  );
+  filter: blur(1px);
+  transform: translate(-50%, -50%);
+}
+
+/* Fade-in al entrar en viewport (usado por FadeInView) */
+.fade-in-on-view {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.45s ease-out,
+    transform 0.45s ease-out;
+  transition-delay: var(--fade-delay, 0s);
+}
+.fade-in-on-view.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar opcional para tema oscuro */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.slate.600") transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme("colors.slate.600");
+    border-radius: 4px;
+  }
+}

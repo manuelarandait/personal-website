@@ -5,6 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "predev": "node scripts/list-carousel.cjs",
+    "prebuild": "node scripts/list-carousel.cjs",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -12,21 +14,21 @@
   },
   "dependencies": {
     "@duskmoon/vue3-typed-js": "^0.0.4",
-    "@headlessui/vue": "^1.7.19",
-    "@nuxt/ui": "^2.13.0",
-    "nuxt": "^3.10.1",
-    "vue": "^3.4.15",
-    "vue-router": "^4.2.5"
+    "@headlessui/vue": "^1.7.23",
+    "@nuxt/ui": "^2.22.3",
+    "nuxt": "^3.21.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9",
-    "@babel/eslint-parser": "^7.23.10",
-    "@nuxt/eslint-config": "^0.2.0",
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.25.0",
+    "@nuxt/eslint-config": "^0.6.0",
     "@nuxtjs/eslint-module": "^4.1.0",
-    "autoprefixer": "^10.4.17",
-    "eslint": "^8.56.0",
-    "nuxt-icon": "^0.6.8",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "nuxt-icon": "^0.6.10",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
   }
 }

@@ -1,7 +1,6 @@
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -14,22 +13,34 @@ export default {
     extend: {
       colors: {
         "primary-light": "#F7F8FC",
-        "secondary-light": "#FFFFFF",
-        "ternary-light": "#f6f7f8",
-
         "primary-dark": "#0D2438",
         "secondary-dark": "#102D44",
         "ternary-dark": "#1E3851",
       },
       container: {
+        center: true,
         padding: {
           DEFAULT: "1rem",
-          sm: "2rem",
-          lg: "5rem",
-          xl: "6rem",
-          "2xl": "8rem",
+          sm: "1.5rem",
+          lg: "2rem",
+          xl: "2rem",
+          "2xl": "2rem",
         },
-      }
+      },
+      animation: {
+        "fade-in": "fadeIn 0.5s ease-out forwards",
+        "fade-in-up": "fadeInUp 0.6s ease-out forwards",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
     },
   },
   plugins: [],

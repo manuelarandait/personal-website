@@ -1,221 +1,63 @@
 <script setup>
-const contacts = ref([
-   {
-     id: 1,
-     name: "Your Address, Your City, Your Country",
-     icon: "mdi:address-marker-outline",
-   },
-   {
-     id: 2,
-     name: "email@domain.com",
-     icon: "mdi:email",
-   },
-   {
-     id: 3,
-     name: "555 8888 888",
-     icon: "mdi:phone",
-   },
-])
+// Sustituye por tu email real
+const email = 'manuel@ejemplo.com'
+const mailto = `mailto:${email}`
+
+const contacts = [
+  { label: 'Email', value: email, href: mailto, icon: 'mdi:email-outline' },
+  { label: 'LinkedIn', value: 'Manuel Aranda', href: 'https://www.linkedin.com/in/manuel-aranda-rosales', icon: 'mdi:linkedin' },
+  { label: 'GitHub', value: 'manuelarandait', href: 'https://github.com/manuelarandait', icon: 'mdi:github' },
+]
 </script>
 
 <template>
-  <div class="max-w-3xl px-6 mx-auto xl:max-w-5xl xl:px-0 overflow-y-hidden pb-4">
-    <div class="pt-10 pb-8 space-y-2 md:space-y-5">
-      <h1
-        class="text-2xl font-bold leading-9 tracking-tight text-sky-950 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
-      >
-        ¿Hablamos?
-      </h1>
-    </div>
-    <div
-      class="
-        mx-auto
-        flex flex-col-reverse
-        md:flex-row md:py-10 md:mt-6
-      "
-    >
-      <div class="w-full md:w-1/2">
-        <div
-          class="
-          leading-loose
-          max-w-xl
-          p-7
-          bg-secondary-light
-          dark:bg-secondary-dark
-          rounded-xl
-          shadow-xl
-          text-left
-        "
-        >
-          <form
-            class="font-general-regular space-y-7"
-            @submit="
-              (e) => {
-                e.preventDefault;
-              }
-            "
-          >
-            <div class="">
-              <label
-                class="block text-lg text-primary-dark dark:text-primary-light mb-2"
-                for="name"
-              >Nombre</label>
-              <input
-                id="name"
-                class="
-                w-full
-                px-5
-                py-2
-                border border-gray-300
-                dark:border-primary-dark
-                border-opacity-50
-                text-primary-dark
-                dark:text-secondary-light
-                bg-ternary-light
-                dark:bg-ternary-dark
-                rounded-md
-                shadow-sm
-                text-md
-              "
-                name="name"
-                type="text"
-                required=""
-                placeholder="Your Name"
-                aria-label="Name"
-              >
-            </div>
-            <div class="mt-6">
-              <label
-                class="block text-lg text-primary-dark dark:text-primary-light mb-2"
-                for="email"
-              >Email</label>
-              <input
-                id="email"
-                class="
-                w-full
-                px-5
-                py-2
-                border border-gray-300
-                dark:border-primary-dark
-                border-opacity-50
-                text-primary-dark
-                dark:text-secondary-light
-                bg-ternary-light
-                dark:bg-ternary-dark
-                rounded-md
-                shadow-sm
-                text-md
-              "
-                name="email"
-                type="text"
-                required=""
-                placeholder="Your Email"
-                aria-label="Email"
-              >
-            </div>
-            <div class="mt-6">
-              <label
-                class="block text-lg text-primary-dark dark:text-primary-light mb-2"
-                for="subject"
-              >Asunto</label>
-              <input
-                id="subject"
-                class="
-                w-full
-                px-5
-                py-2
-                border border-gray-300
-                dark:border-primary-dark
-                border-opacity-50
-                text-primary-dark
-                dark:text-secondary-light
-                bg-ternary-light
-                dark:bg-ternary-dark
-                rounded-md
-                shadow-sm
-                text-md
-              "
-                name="subject"
-                type="text"
-                required=""
-                placeholder="Subject"
-                aria-label="Subject"
-              >
-            </div>
-  
-            <div class="mt-6">
-              <label
-                class="block text-lg text-primary-dark dark:text-primary-light mb-2"
-                for="message"
-              >Mensaje</label>
-              <textarea
-                id="message"
-                class="
-                w-full
-                px-5
-                py-2
-                border border-gray-300
-                dark:border-primary-dark
-                border-opacity-50
-                text-primary-dark
-                dark:text-secondary-light
-                bg-ternary-light
-                dark:bg-ternary-dark
-                rounded-md
-                shadow-sm
-                text-md
-              "
-                name="message"
-                cols="14"
-                rows="6"
-                aria-label="Message"
-              />
-            </div>
-  
-            <div class="mt-6">
-              <UButton
-                class="text-sm px-4 flex justify-end mx-2"
-                color="white"
-                type="submit"
-                label="Enviar mensaje"
-              />
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="w-full md:w-1/2">
-        <div class="text-left max-w-xl px-6">
-          <h2
-            class="font-general-medium text-sky-950 text-2xl mt-8 mb-8"
-          >
-            Dirección de contacto
+  <section id="contacto" class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <div class="container mx-auto max-w-5xl">
+      <FadeInView>
+        <div class="mb-12 sm:mb-16">
+          <h2 class="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl lg:text-5xl">
+            ¿Hablamos?
           </h2>
-          <ul class="font-general-regular">
-            <li
-              v-for="contact in contacts"
-              :key="contact.id"
-              class="flex"
+          <p class="mt-3 text-slate-300 sm:text-lg">
+            Escríbeme por email o conéctame en LinkedIn o GitHub. Te respondo lo antes posible.
+          </p>
+        </div>
+      </FadeInView>
+
+      <FadeInView :delay="0.08">
+        <div class="flex flex-col items-center gap-8 sm:gap-10">
+          <a
+            :href="mailto"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-8 py-4 text-base font-semibold text-slate-950 shadow-lg transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-slate-950"
+          >
+            <Icon name="mdi:email-outline" size="24" />
+            Enviar email
+          </a>
+          <ul class="grid w-full gap-4 sm:max-w-md sm:grid-cols-1">
+            <FadeInView
+              v-for="(contact, i) in contacts"
+              :key="contact.label"
+              tag="li"
+              :delay="0.06 * (i + 1)"
+              class="flex items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/50 p-4 transition hover:border-slate-700"
             >
-              <Icon
-                :name="contact.icon"
-                size="32px"
-                class="w-5 text-sky-950 mr-4"
-              />
-              <a
-                class="text-lg mb-4 text-sky-950"
-                :class="
-                  contact.icon === 'mail' || contact.icon === 'phone'
-                    ? 'hover:underline cursor-pointer'
-                    : ''
-                "
-                aria-label="Website and Phone"
-              >
-                {{ contact.name }}
-              </a>
-            </li>
+              <Icon :name="contact.icon" size="24" class="shrink-0 text-emerald-400/80" />
+              <div class="min-w-0">
+                <span class="block text-sm font-medium text-slate-400">{{ contact.label }}</span>
+                <a
+                  :href="contact.href"
+                  :target="contact.href.startsWith('http') ? '_blank' : undefined"
+                  :rel="contact.href.startsWith('http') ? 'noopener noreferrer' : undefined"
+                  class="mt-0.5 block truncate text-slate-200 hover:text-emerald-400 hover:underline"
+                >
+                  {{ contact.value }}
+                </a>
+              </div>
+              <Icon v-if="contact.href.startsWith('http')" name="mdi:open-in-new" size="18" class="shrink-0 text-slate-500" />
+            </FadeInView>
           </ul>
         </div>
-      </div>
+      </FadeInView>
     </div>
-  </div>
+  </section>
 </template>

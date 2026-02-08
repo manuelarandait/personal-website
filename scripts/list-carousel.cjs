@@ -3,9 +3,13 @@ const path = require('path')
 
 const carouselDir = path.join(process.cwd(), 'public/img/carousel')
 const outputPath = path.join(process.cwd(), 'data/carousel-images.json')
+const dataDir = path.dirname(outputPath)
 
 const imageExtensions = /\.(jpeg|jpg|png)$/i
 
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true })
+}
 if (!fs.existsSync(carouselDir)) {
   fs.writeFileSync(outputPath, '[]')
   process.exit(0)

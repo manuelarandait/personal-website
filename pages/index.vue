@@ -6,6 +6,7 @@
     </section>
 
     <modules-projects />
+    <modules-how-i-work />
     <modules-about />
     <modules-contact />
   </div>

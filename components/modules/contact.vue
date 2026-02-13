@@ -1,6 +1,6 @@
 <script setup>
 // Sustituye por tu email real
-const email = 'manuel@ejemplo.com'
+const email = 'manuel.aranda.it@gmail.com'
 const mailto = `mailto:${email}`
 
 const contacts = [

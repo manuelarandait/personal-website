@@ -2,6 +2,7 @@
 const navigation = [
   { name: 'Inicio', hash: '#inicio' },
   { name: 'Proyectos', hash: '#proyectos' },
+  { name: 'Cómo trabajo', hash: '#como-trabajo' },
   { name: 'Sobre mí', hash: '#sobre-mi' },
   { name: 'Contacto', hash: '#contacto' },
 ]
@@ -19,7 +20,7 @@ function goToSection(hash) {
 }
 
 function updateActiveSection() {
-  const sectionIds = ['inicio', 'proyectos', 'sobre-mi', 'contacto']
+  const sectionIds = ['inicio', 'proyectos', 'como-trabajo', 'sobre-mi', 'contacto']
   const offset = 120
   let current = '#inicio'
   let maxTop = -Infinity

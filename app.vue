@@ -1,6 +1,5 @@
 <template>
   <div class="relative min-h-screen bg-slate-950 text-slate-100 antialiased">
-    <!-- Fondo: grid + gradiente fijo en el centro -->
     <div class="bg-effects pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
       <div class="bg-effects__grid" />
       <div class="bg-effects__glow" />

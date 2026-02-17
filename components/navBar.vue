@@ -1,9 +1,9 @@
 <script setup>
 const navigation = [
   { name: 'Inicio', hash: '#inicio' },
-  { name: 'Proyectos', hash: '#proyectos' },
-  { name: 'Cómo trabajo', hash: '#como-trabajo' },
   { name: 'Sobre mí', hash: '#sobre-mi' },
+  { name: 'Cómo trabajo', hash: '#como-trabajo' },
+  { name: 'Proyectos', hash: '#proyectos' },
   { name: 'Contacto', hash: '#contacto' },
 ]
 
@@ -20,7 +20,7 @@ function goToSection(hash) {
 }
 
 function updateActiveSection() {
-  const sectionIds = ['inicio', 'proyectos', 'como-trabajo', 'sobre-mi', 'contacto']
+  const sectionIds = ['inicio', 'sobre-mi', 'como-trabajo', 'proyectos', 'contacto']
   const offset = 120
   let current = '#inicio'
   let maxTop = -Infinity
@@ -54,10 +54,17 @@ onUnmounted(() => {
     <div class="container mx-auto flex items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
       <a
         href="#inicio"
-        class="text-lg font-semibold tracking-tight text-slate-100 transition hover:text-emerald-400"
+        class="flex items-center transition opacity-90 hover:opacity-100"
         @click.prevent="goToSection('#inicio')"
+        aria-label="Inicio"
       >
-        MA
+        <img
+          src="/logo.png"
+          alt="Manuel Aranda"
+          class="h-9 w-auto object-contain"
+          width="80"
+          height="36"
+        >
       </a>
 
       <!-- Desktop nav -->
@@ -81,13 +88,7 @@ onUnmounted(() => {
         >
           <Icon name="uil:github" size="22" />
         </a>
-        <button
-          type="button"
-          class="rounded-full bg-slate-800 px-4 py-2 text-sm font-medium text-slate-200 ring-1 ring-slate-700 transition hover:bg-slate-700 hover:ring-emerald-500/50"
-          @click="careerOpen = true"
-        >
-          Carrera
-        </button>
+
       </div>
 
       <!-- Mobile menu button -->
@@ -144,13 +145,7 @@ onUnmounted(() => {
             <Icon name="uil:github" size="20" />
             GitHub
           </a>
-          <button
-            type="button"
-            class="rounded-lg px-4 py-3 text-left text-slate-300 transition hover:bg-slate-800 hover:text-emerald-400"
-            @click="careerOpen = true; mobileMenuOpen = false"
-          >
-            Carrera
-          </button>
+          
         </div>
       </DialogPanel>
     </Dialog>

@@ -1,9 +1,19 @@
 <template>
   <footer class="border-t border-slate-800 bg-slate-950 px-4 py-6 sm:px-6 lg:px-8">
     <div class="container mx-auto flex flex-col items-center justify-between gap-4 sm:flex-row">
-      <p class="text-sm text-slate-500">
-        © {{ new Date().getFullYear() }} Manuel Aranda
-      </p>
+      <div class="flex items-center gap-3">
+        <img
+          src="/logo.png"
+          alt=""
+          class="h-7 w-auto object-contain opacity-80"
+          width="56"
+          height="28"
+          aria-hidden="true"
+        >
+        <p class="text-sm text-slate-500">
+          © {{ new Date().getFullYear() }} Manuel Aranda
+        </p>
+      </div>
       <div class="flex gap-6">
         <a
           href="https://github.com/manuelarandait"

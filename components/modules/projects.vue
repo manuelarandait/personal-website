@@ -3,6 +3,20 @@ import projectsData from '~/data/projects'
 
 const projects = ref(projectsData)
 
+// En mobile mostramos 2 proyectos y "Ver más"; en desktop todos desde el inicio
+const showAllProjects = ref(false)
+const MOBILE_BREAKPOINT = 768
+const INITIAL_COUNT_MOBILE = 2
+
+onMounted(() => {
+  showAllProjects.value = typeof window !== 'undefined' && window.innerWidth >= MOBILE_BREAKPOINT
+})
+
+const projectsToShow = computed(() =>
+  showAllProjects.value ? projects.value : projects.value.slice(0, INITIAL_COUNT_MOBILE)
+)
+const showVerMasButton = computed(() => !showAllProjects.value && projects.value.length > INITIAL_COUNT_MOBILE)
+
 function techList(project) {
   return [project.tech1, project.tech2, project.tech3, project.tech4, project.tech5, project.tech6].filter(Boolean)
 }
@@ -24,7 +38,7 @@ function techList(project) {
 
       <div class="grid gap-6 sm:grid-cols-2 lg:gap-8 items-stretch">
         <FadeInView
-          v-for="(project, idx) in projects"
+          v-for="(project, idx) in projectsToShow"
           :key="idx"
           :delay="idx * 0.08"
           class="h-full"
@@ -85,6 +99,16 @@ function techList(project) {
           </article>
         </FadeInView>
       </div>
+
+      <FadeInView v-if="showVerMasButton" class="mt-8 flex justify-center md:hidden">
+        <button
+          type="button"
+          class="rounded-xl border border-slate-700 bg-slate-800/50 px-6 py-3 text-sm font-medium text-slate-200 transition hover:border-emerald-500/50 hover:bg-slate-800 hover:text-emerald-400"
+          @click="showAllProjects = true"
+        >
+          Ver más proyectos
+        </button>
+      </FadeInView>
     </div>
   </section>
 </template>

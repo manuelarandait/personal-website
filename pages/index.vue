@@ -5,9 +5,9 @@
       <modules-home-sections />
     </section>
 
-    <modules-projects />
-    <modules-how-i-work />
     <modules-about />
+    <modules-how-i-work />
+    <modules-projects />
     <modules-contact />
   </div>
 </template>

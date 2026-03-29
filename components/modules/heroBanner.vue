@@ -38,13 +38,17 @@ onMounted(() => {
 
           <!-- Foto circular pequeña -->
           <div class="shrink-0">
-            <img
+            <NuxtImg
               class="h-32 w-32 rounded-full object-cover shadow-xl ring-2 ring-emerald-500/30 sm:h-40 sm:w-40"
-              src="~/assets/img/profile.jpg"
+              src="/img/profile.jpg"
               alt="Manuel Aranda"
               width="160"
               height="160"
-            >
+              format="webp"
+              quality="85"
+              fetchpriority="high"
+              loading="eager"
+            />
           </div>
 
           <!-- Texto -->

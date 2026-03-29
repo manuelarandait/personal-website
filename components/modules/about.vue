@@ -1,5 +1,4 @@
 <script setup>
-import profileImg from '~/assets/img/profile.jpg'
 import carouselPaths from '~/data/carousel-images.json'
 
 const carouselImages = [profileImg, ...carouselPaths]
@@ -7,6 +6,8 @@ const carouselImages = [profileImg, ...carouselPaths]
 const currentSlide = ref(0)
 const autoplayInterval = ref(null)
 const AUTOPLAY_MS = 5000
+const profileImg = '/img/profile.jpg'
+
 
 function goTo (index) {
   currentSlide.value = (index + carouselImages.length) % carouselImages.length

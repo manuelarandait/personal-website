@@ -4,9 +4,10 @@ import type { TypedOptions } from '@duskmoon/vue3-typed-js'
 
 const options: TypedOptions = {
   strings: [
-    'Análisis y diseño de soluciones',
-    'APIs y microservicios',
-    'De requisitos a producción',
+    'ERPs y gestión interna a medida',
+    'Plataformas que escalan con tu negocio',
+    'Del análisis al despliegue, sin intermediarios',
+    'CRMs propios que se adaptan a cómo trabajáis',
   ],
   loop: true,
   typeSpeed: 55,
@@ -33,37 +34,43 @@ onMounted(() => {
 
     <FadeInView>
       <div class="container relative mx-auto max-w-5xl">
-        <div class="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
-          <div class="shrink-0 w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px]">
+        <div class="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-14">
+
+          <!-- Foto circular pequeña -->
+          <div class="shrink-0">
             <img
-              class="w-full rounded-2xl object-cover shadow-2xl ring-2 ring-slate-700/50 aspect-square"
+              class="h-32 w-32 rounded-full object-cover shadow-xl ring-2 ring-emerald-500/30 sm:h-40 sm:w-40"
               src="~/assets/img/profile.jpg"
               alt="Manuel Aranda"
-              width="380"
-              height="380"
+              width="160"
+              height="160"
             >
           </div>
+
+          <!-- Texto -->
           <div class="flex flex-1 flex-col text-center lg:text-left">
             <p class="mb-2 text-sm font-medium uppercase tracking-wider text-emerald-400/90">
               +10 años de experiencia · Alcorcón, Madrid
             </p>
             <h1 class="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl lg:text-5xl">
               Manuel Aranda
-              <span class="block text-slate-300 font-semibold sm:text-2xl lg:text-3xl">Software Engineer · Analista Full-Stack</span>
+              <span class="block text-slate-300 font-semibold sm:text-2xl lg:text-3xl mt-1">
+                Desarrollo software de gestión a medida
+              </span>
             </h1>
             <p class="mt-2 text-slate-400 sm:text-lg">
-              Diseño y desarrollo de soluciones web y APIs escalables
+              ERPs, CRMs y plataformas internas para empresas que han crecido y necesitan herramientas propias
             </p>
             <p v-if="prefersReducedMotion" class="mt-2 min-h-[1.75rem] text-slate-400 sm:text-lg">
-              Análisis y diseño de soluciones · APIs y microservicios
+              ERPs y gestión interna a medida · Del análisis al despliegue, sin intermediarios
             </p>
             <Typed v-else :options="options" aria-hidden="true">
-              <p class="mt-2 min-h-[1.75rem] text-slate-400 sm:text-lg">
+              <p class="mt-2 min-h-[1.75rem] text-emerald-400/80 sm:text-lg">
                 <span class="typing" />
               </p>
             </Typed>
             <p class="mt-3 text-sm text-violet-300/80">
-              Disponible para proyectos freelance
+              ● Disponible para proyectos freelance
             </p>
             <div class="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
               <a
@@ -80,6 +87,7 @@ onMounted(() => {
               </a>
             </div>
           </div>
+
         </div>
       </div>
     </FadeInView>

@@ -1,5 +1,4 @@
 <script setup>
-// Sustituye por tu email real
 const email = 'manuel.aranda.it@gmail.com'
 const mailto = `mailto:${email}`
 
@@ -19,7 +18,7 @@ const contacts = [
             ¿Hablamos?
           </h2>
           <p class="mt-3 text-slate-300 sm:text-lg">
-            Escríbeme por email o conéctame en LinkedIn o GitHub. Te respondo lo antes posible.
+            Si tienes un proyecto en mente, un sistema que mejorar o simplemente quieres explorar si puedo ayudarte, escríbeme. Sin formularios largos, sin agencias de por medio.
           </p>
         </div>
       </FadeInView>

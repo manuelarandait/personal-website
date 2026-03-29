@@ -2,7 +2,6 @@
 import profileImg from '~/assets/img/profile.jpg'
 import carouselPaths from '~/data/carousel-images.json'
 
-// Primera foto desde assets; el resto se cargan automáticamente de public/img/carousel/ (solo .jpeg, .jpg, .png). Al añadir una imagen, reinicia dev o vuelve a hacer build.
 const carouselImages = [profileImg, ...carouselPaths]
 
 const currentSlide = ref(0)
@@ -61,14 +60,13 @@ const socialLinks = [
             Conóceme mejor
           </h2>
           <p class="mt-3 text-slate-400 sm:text-lg">
-            Un poco sobre mí y mi trayectoria.
+            Quién hay detrás de los proyectos.
           </p>
         </div>
       </FadeInView>
 
       <FadeInView :delay="0.1">
         <div class="flex justify-center">
-          <!-- Una sola foto: imagen estática. Dos o más: carousel -->
           <div
             v-if="carouselImages.length === 1"
             class="w-full max-w-sm"
@@ -113,16 +111,17 @@ const socialLinks = [
           </div>
         </div>
       </FadeInView>
+
       <FadeInView :delay="0.15">
         <div class="mt-12 space-y-6">
           <p class="text-slate-300 leading-relaxed">
-            Trabajo como ingeniero de software con un fuerte enfoque en análisis y diseño de soluciones. Acompaño proyectos desde la definición funcional y técnica hasta el desarrollo, despliegue y evolución del producto. He trabajado principalmente con Symfony y Vue, pero me adapto al stack que mejor encaje en cada contexto (Node.js, Angular, microservicios, integraciones, etc.).
+            Llevo más de 10 años construyendo software de gestión: ERPs, CRMs, plataformas internas, paneles de administración. Proyectos donde el código tiene que funcionar bien porque alguien depende de él cada día para trabajar.
           </p>
           <p class="text-slate-300 leading-relaxed">
-            Aunque he trabajado durante años con Symfony y Vue, no concibo la tecnología como un fin, sino como un medio. A lo largo del tiempo he trabajado también con Node.js, Angular y distintos entornos y arquitecturas, adaptándome a las necesidades de cada proyecto.
+            He trabajado principalmente con Symfony y Vue, pero elijo las herramientas en función del proyecto, no por costumbre. Lo que no cambia es el enfoque: entender bien el problema antes de proponer una solución, y acompañar el proyecto desde el análisis hasta el despliegue.
           </p>
           <p class="text-slate-300 leading-relaxed">
-            Me siento cómodo en proyectos donde hay reflexión, comunicación y criterio técnico. Me gusta entender el problema antes de escribir código y participar en decisiones que impactan a medio y largo plazo.
+            Trabajo como freelance porque me permite implicarme de verdad en cada proyecto, sin capas de por medio. Trato directamente con quien toma las decisiones y eso hace que las cosas salgan mejor.
           </p>
         </div>
       </FadeInView>
@@ -130,7 +129,7 @@ const socialLinks = [
       <FadeInView :delay="0.06">
         <div class="mt-12 rounded-xl border border-violet-500/20 bg-violet-500/5 p-6">
           <p class="text-slate-300 italic leading-relaxed">
-            Me gusta trabajar con calma, entender bien los problemas y cuidar los detalles.
+            Me gusta entender el negocio antes de escribir código. Un buen análisis evita más problemas que cualquier framework.
           </p>
         </div>
       </FadeInView>
@@ -141,21 +140,11 @@ const socialLinks = [
             Fuera del trabajo disfruto de la lectura, el cine, la montaña y el deporte. Cuando toca desconectar, los videojuegos también tienen su espacio.
           </p>
           <div class="mt-4 flex flex-wrap gap-3">
-            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
-              📚 Lectura
-            </span>
-            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
-              🎬 Cine
-            </span>
-            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
-              🏔️ Montaña
-            </span>
-            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
-              🏃 Running
-            </span>
-            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">
-              🎮 Videojuegos
-            </span>
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">📚 Lectura</span>
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">🎬 Cine</span>
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">🏔️ Montaña</span>
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">🏃 Running</span>
+            <span class="rounded-full bg-violet-500/10 px-3 py-1 text-sm text-violet-300">🎮 Videojuegos</span>
           </div>
         </div>
       </FadeInView>
@@ -171,7 +160,7 @@ const socialLinks = [
                 Backend
               </h3>
               <p class="mt-3 text-sm text-slate-300">
-                Diseño y desarrollo de APIs, lógica de negocio y arquitectura.
+                Lógica de negocio compleja, APIs robustas y arquitectura pensada para durar.
               </p>
               <p class="mt-4 text-sm text-slate-400">
                 PHP / Symfony · Node.js · APIs REST · Integraciones · Auth
@@ -182,7 +171,7 @@ const socialLinks = [
                 Frontend
               </h3>
               <p class="mt-3 text-sm text-slate-300">
-                Interfaces mantenibles, orientadas a producto y experiencia de usuario.
+                Interfaces que tu equipo usará cada día: claras, rápidas y fáciles de mantener.
               </p>
               <p class="mt-4 text-sm text-slate-400">
                 Vue · Nuxt · Angular · Componentes · Estado
@@ -193,7 +182,7 @@ const socialLinks = [
                 Infra / Entorno
               </h3>
               <p class="mt-3 text-sm text-slate-300">
-                Entornos de desarrollo, despliegue y mantenimiento.
+                Despliegues estables, entornos bien configurados y sistemas que no fallan en producción.
               </p>
               <p class="mt-4 text-sm text-slate-400">
                 Docker · MySQL · CI/CD · AWS
@@ -205,23 +194,23 @@ const socialLinks = [
 
       <FadeInView :delay="0.1">
         <div class="mt-16 rounded-2xl border border-slate-800 bg-slate-900/50 px-6 py-10 sm:px-10 sm:py-12">
-        <h2 class="text-center text-xl font-semibold text-slate-100">
-          Sígueme
-        </h2>
-        <div class="mt-6 flex flex-wrap justify-center gap-6">
-          <a
-            v-for="link in socialLinks"
-            :key="link.name"
-            :href="link.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-2 rounded-lg p-3 text-slate-400 transition hover:bg-slate-800 hover:text-emerald-400"
-            :aria-label="link.name"
-          >
-            <Icon :name="link.icon" size="28" />
-            <span class="text-sm font-medium">{{ link.name }}</span>
-          </a>
-        </div>
+          <h2 class="text-center text-xl font-semibold text-slate-100">
+            Sígueme
+          </h2>
+          <div class="mt-6 flex flex-wrap justify-center gap-6">
+            <a
+              v-for="link in socialLinks"
+              :key="link.name"
+              :href="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 rounded-lg p-3 text-slate-400 transition hover:bg-slate-800 hover:text-emerald-400"
+              :aria-label="link.name"
+            >
+              <Icon :name="link.icon" size="28" />
+              <span class="text-sm font-medium">{{ link.name }}</span>
+            </a>
+          </div>
         </div>
       </FadeInView>
     </div>

@@ -1,24 +1,24 @@
 <script setup>
 const blocks = [
   {
-    title: 'Análisis antes que código',
-    summary: 'Empiezo por entender el problema.',
-    body: 'Antes de escribir una línea de código, me aseguro de comprender el contexto, las necesidades reales y las implicaciones técnicas. Esto evita soluciones apresuradas y retrabajo a medio plazo.'
+    title: 'Primero el problema, luego el código',
+    summary: 'Sin análisis no hay buena solución.',
+    body: 'Antes de escribir una línea, entiendo qué necesita realmente tu negocio. Qué procesos tiene, dónde falla, qué tiene que escalar. Esto evita construir algo que funciona técnicamente pero no resuelve el problema real.'
   },
   {
-    title: 'Tecnología al servicio del proyecto',
-    summary: 'No me caso con un framework.',
-    body: 'He trabajado principalmente con Symfony y Vue, pero elijo herramientas en función del contexto, no por inercia. El objetivo es construir soluciones mantenibles y sostenibles, no seguir modas.'
+    title: 'Tecnología al servicio de tu negocio',
+    summary: 'Elijo lo que mejor encaja, no lo que más me gusta.',
+    body: 'He trabajado con Symfony, Vue, Node, Angular y distintas arquitecturas. El stack lo decide el proyecto, no la costumbre. El objetivo es que lo que construyamos sea mantenible y sostenible a largo plazo.'
   },
   {
-    title: 'Visión end-to-end',
-    summary: 'Acompaño el proyecto de principio a fin.',
-    body: 'Desde la definición funcional y técnica hasta el despliegue y la evolución del producto. Me implico en todo el ciclo para que las decisiones tengan sentido a largo plazo.'
+    title: 'Del análisis al despliegue, sin intermediarios',
+    summary: 'Un solo interlocutor durante todo el proyecto.',
+    body: 'Acompaño el proyecto desde la definición funcional hasta producción. No hay un comercial que vende y un dev que ejecuta. Hablas directamente con quien construye, y eso cambia la calidad de las decisiones.'
   },
   {
-    title: 'Comunicación clara y responsabilidad',
-    summary: 'Trabajo con claridad y criterio.',
-    body: 'Valoro la comunicación directa, los acuerdos claros y la responsabilidad compartida. Creo que el buen software se construye con buenas conversaciones, no solo con buenas herramientas.'
+    title: 'Comunicación directa y acuerdos claros',
+    summary: 'Sin sorpresas ni letra pequeña.',
+    body: 'Valoro la comunicación honesta y los acuerdos claros desde el principio. Si algo no va a funcionar, lo digo antes de empezar. Prefiero un cliente informado a uno contento a corto plazo.'
   }
 ]
 </script>
@@ -32,7 +32,7 @@ const blocks = [
             Qué puedes esperar de mí
           </h2>
           <p class="mt-3 text-slate-400 sm:text-lg">
-            Así trabajo, así pienso y así te va a afectar a ti.
+            Cómo trabajo y qué significa eso para tu proyecto.
           </p>
         </div>
       </FadeInView>

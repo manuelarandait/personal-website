@@ -21,6 +21,9 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: 'Manuel Aranda — Desarrollo software de gestión a medida',
+      htmlAttrs: {
+        lang: 'es'
+      },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -36,17 +39,24 @@ export default defineNuxtConfig({
           property: 'og:description',
           content: 'Desarrollo ERPs, CRMs y plataformas internas a medida para empresas que han crecido y necesitan herramientas propias. Freelance senior en Madrid.'
         },
-        { property: 'og:image', content: '/og-image.jpg' },
+        { property: 'og:image', content: 'https://manuelaranda.dev/og-image.jpg' },
+        { property: 'og:image:secure_url', content: 'https://manuelaranda.dev/og-image.jpg' },
+        { property: 'og:image:type', content: 'image/jpeg' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:image:alt', content: 'Manuel Aranda — Desarrollo software de gestión a medida' },
+        { property: 'og:locale', content: 'es_ES' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Manuel Aranda — Desarrollo software de gestión a medida' },
         {
           name: 'twitter:description',
           content: 'Desarrollo ERPs, CRMs y plataformas internas a medida para empresas que han crecido y necesitan herramientas propias. Freelance senior en Madrid.'
         },
-        { name: 'twitter:image', content: '/og-image.jpg' }
+        { name: 'twitter:image', content: 'https://manuelaranda.dev/og-image.jpg' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'canonical', href: 'https://manuelaranda.dev' }
       ]
     }
   }

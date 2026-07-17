@@ -78,6 +78,9 @@ const linkedInUrl = 'https://www.linkedin.com/in/manuel-aranda-rosales'
     </div>
   </section>
 
+  <!-- Producto propio: Pace Rivals -->
+  <modules-pace-rivals />
+
   <!-- Trayectoria reciente -->
   <section class="border-t border-slate-800/80 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
     <div class="container mx-auto max-w-3xl">
